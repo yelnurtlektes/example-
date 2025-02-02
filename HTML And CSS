@@ -1,0 +1,130 @@
+/* --- Skip Link Styling --- */
+.skip-link {
+  position: absolute;
+  top: -40px; /* Off-screen initially */
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0; /* Bring link on-screen when focused (e.g., by keyboard navigation) */
+}
+
+/* --- Header Styling --- */
+header {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* --- Nav Styling --- */
+/* Change nav to inline-block and set width to about 80% */
+nav {
+  display: inline-block;
+  width: 80%;
+  background-color: #007bff;
+  padding: 10px;
+}
+
+/* Descendant selector: style only the image inside nav to have width about 10% */
+nav img {
+  width: 10%;
+}
+
+/* --- Existing li styling commented out --- */
+/*
+li {
+  display: block;
+  margin: 5px 0;
+}
+*/
+
+/* --- Grid Class Styling --- */
+/* Use a two-column grid where each column is approximately 40% wide */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center; /* Center the grid within its container */
+  align-items: start;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+/* Descendant selector: style only images inside the .grid class to have width 100% */
+.grid img {
+  width: 100%;
+}
+
+/* --- Flex Class Styling --- */
+/* Use flexbox for the flex class and adjust flex-wrap and justify-content */
+.flex {
+  display: flex;
+  flex-wrap: wrap;             /* Allow items to wrap onto multiple lines */
+  justify-content: space-around; /* Adjust spacing between items */
+  align-items: center;
+  gap: 20px;                   /* Add a gap between flex items */
+}
+
+/* --- Additional styling as needed --- */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 1 - Revised</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content link -->
+  <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+  
+  <header>
+    <h1>Site Title</h1>
+  </header>
+  
+  <nav>
+    <!-- An example image inside nav -->
+    <img src="logo.png" alt="Site Logo">
+    <ul>
+      <li><a href="page1.html">Page 1</a></li>
+      <li><a href="page2.html">Page 2</a></li>
+      <li><a href="page3.html">Page 3</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Added an id to main for the skip link target -->
+  <main id="mainContent">
+    <!-- Grid section -->
+    <section class="grid">
+      <div>
+        <img src="image1.jpg" alt="Grid Image 1">
+        <p>Grid item 1</p>
+      </div>
+      <div>
+        <img src="image2.jpg" alt="Grid Image 2">
+        <p>Grid item 2</p>
+      </div>
+    </section>
+    
+    <!-- Flex section -->
+    <section class="flex">
+      <div>
+        <img src="flex1.jpg" alt="Flex Image 1">
+        <p>Flex item 1</p>
+      </div>
+      <div>
+        <img src="flex2.jpg" alt="Flex Image 2">
+        <p>Flex item 2</p>
+      </div>
+      <!-- Additional flex items as needed -->
+    </section>
+  </main>
+  
+  <footer>
+    <p>Footer content goes here.</p>
+  </footer>
+</body>
+</html>
