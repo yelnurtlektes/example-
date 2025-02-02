@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Preview Example</title>
+  <style>
+    /* Style for the preview container */
+    #image {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      background-image: url('');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      line-height: 300px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    
+    /* Style for the thumbnail images */
+    .preview {
+      width: 100px;
+      height: 75px;
+      cursor: pointer;
+      margin: 5px;
+      border: 1px solid #aaa;
+      transition: transform 0.3s ease;
+    }
+    
+    /* A simple hover effect on thumbnails */
+    .preview:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- The "display" div that shows the default text or preview image -->
+  <div id="image">Hover over an image below to display here.</div>
+  
+  <!-- A gallery of thumbnail images -->
+  <div id="gallery">
+    <img class="preview" src="img1.jpg" alt="Image 1 Description" onmouseover="upDate(this)" onmouseout="undo()">
+    <img class="preview" src="img2.jpg" alt="Image 2 Description" onmouseover="upDate(this)" onmouseout="undo()">
+    <img class="preview" src="img3.jpg" alt="Image 3 Description" onmouseover="upDate(this)" onmouseout="undo()">
+    <!-- Add additional images as desired -->
+  </div>
+  
+  <!-- Link to your JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
+// Function to update the preview area when the mouse hovers over a thumbnail
+function upDate(previewPic) {
+  // Log that the event is triggering
+  console.log("upDate() event triggered.");
+  
+  // Log the alt text and source of the hovered image
+  console.log("Preview Image ALT:", previewPic.alt);
+  console.log("Preview Image SRC:", previewPic.src);
+  
+  // Get the div with the id "image"
+  var imageDiv = document.getElementById("image");
+  
+  // Change the text of the div to the alt text of the image
+  imageDiv.innerHTML = previewPic.alt;
+  
+  // Change the background image of the div to the source of the hovered image
+  imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+}
+
+// Function to reset the preview area when the mouse moves away
+function undo() {
+  // Get the div with the id "image"
+  var imageDiv = document.getElementById("image");
+  
+  // Reset the background image to its original (empty) state
+  imageDiv.style.backgroundImage = "url('')";
+  
+  // Reset the text of the div to the default message
+  imageDiv.innerHTML = "Hover over an image below to display here.";
+}How This Works
+HTML Structure:
+The <div id="image"> shows the default message.
+Each thumbnail image has onmouseover="upDate(this)" and onmouseout="undo()" attributes.
+This passes the current image (via this) to the upDate function when hovered, and calls undo when the mouse leaves.
+The upDate Function:
+Uses console.log() to verify the event is firing and to log the alt text and src of the hovered image.
+Finds the element with the id "image" using document.getElementById("image").
+Updates the inner HTML of the div with the image’s alt text.
+Updates the background image of the div to the image’s source.
+The undo Function:
+Resets the background image of the "image" div back to an empty URL.
+Resets the text to the original default message.
+Testing and Validation:
+Use your browser’s console to check that the console.log() outputs appear.
+Validate your HTML using the W3C Markup Validator.
+Optionally, use the WAVE tool for accessibility checks.
+Hosting:
+You can host this code on CodePen, GitHub Pages, or any hosting service of your choice.
+Once hosted, share your URL and complete the required peer reviews.
