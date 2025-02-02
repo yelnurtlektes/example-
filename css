@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Photo Gallery</title>
+  <style>
+    /* Preview area styles */
+    #preview {
+      width: 400px;
+      height: 300px;
+      border: 2px solid #333;
+      margin: 20px auto;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      line-height: 300px;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #555;
+    }
+    /* Gallery container styling */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    /* Thumbnail image styling */
+    .gallery img {
+      width: 200px;
+      height: auto;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body onload="initializeGallery()">
+  <!-- Preview area for displaying the hovered/focused image details -->
+  <div id="preview">Hover or focus on an image to preview here.</div>
+  
+  <!-- Gallery containing six images -->
+  <div class="gallery" id="gallery">
+    <img src="img1.jpg" alt="A beautiful sunrise over the mountains" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+    <img src="img2.jpg" alt="A calm beach with crystal clear water" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+    <img src="img3.jpg" alt="A bustling city skyline at night" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+    <img src="img4.jpg" alt="A serene forest pathway in autumn" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+    <img src="img5.jpg" alt="A close-up of vibrant flowers in bloom" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+    <img src="img6.jpg" alt="A snowy landscape with evergreen trees" 
+         onmouseover="upDate(this)" onmouseleave="undo()"
+         onfocus="upDate(this)" onblur="undo()">
+  </div>
+  
+  <!-- Link to external JavaScript file (or include inline script as shown below) -->
+  <script>
+    // Function to update the preview area when an image is hovered or focused
+    function upDate(previewPic) {
+      console.log("upDate event triggered for image:", previewPic.alt);
+      var previewDiv = document.getElementById('preview');
+      // Update the preview text with the alt attribute of the image
+      previewDiv.innerHTML = previewPic.alt;
+      // Change the background image of the preview area to the hovered image's source
+      previewDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+    }
+    
+    // Function to reset the preview area when the mouse leaves or the image loses focus
+    function undo() {
+      console.log("undo event triggered.");
+      var previewDiv = document.getElementById('preview');
+      previewDiv.innerHTML = "Hover or focus on an image to preview here.";
+      previewDiv.style.backgroundImage = "none";
+    }
+    
+    // Function to initialize the gallery on page load
+    function initializeGallery() {
+      console.log("initializeGallery triggered on page load.");
+      // Get all image elements within the gallery
+      var galleryImages = document.querySelectorAll('#gallery img');
+      
+      // Loop through each image and add tabindex to make them focusable
+      for (var i = 0; i < galleryImages.length; i++) {
+        galleryImages[i].setAttribute('tabindex', '0');
+        console.log("Tabindex added to image:", galleryImages[i].alt);
+      }
+      
+      // (Optional) Add any additional onload functionality here
+    }
+  </script>
+</body>
+</html>
