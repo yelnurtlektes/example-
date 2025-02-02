@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content link (hidden until focused) -->
+  <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main content starts here -->
+  <main id="mainContent">
+    <section class="grid-section">
+      <h2>Featured Projects</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="images/project1.jpg" alt="Project 1">
+          <p>Project 1 Description</p>
+        </div>
+        <div class="grid-item">
+          <img src="images/project2.jpg" alt="Project 2">
+          <p>Project 2 Description</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content link (hidden until focused) -->
+  <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <h1>Gallery</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main id="mainContent">
+    <section class="flex-gallery">
+      <h2>Image Gallery</h2>
+      <div class="flex-container">
+        <!-- At least five images -->
+        <img src="images/gallery1.jpg" alt="Gallery Image 1">
+        <img src="images/gallery2.jpg" alt="Gallery Image 2">
+        <img src="images/gallery3.jpg" alt="Gallery Image 3">
+        <img src="images/gallery4.jpg" alt="Gallery Image 4">
+        <img src="images/gallery5.jpg" alt="Gallery Image 5">
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - About</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content link (hidden until focused) -->
+  <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <h1>About Me</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main id="mainContent">
+    <section class="about-content">
+      <h2>Biography</h2>
+      <img src="images/myphoto.jpg" alt="My Photo">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus nec sapien condimentum convallis. Donec elementum ultrices mauris.
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+</body>
+</html>
