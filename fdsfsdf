@@ -1,0 +1,14 @@
+/* Second media query for larger desktops */
+@media screen and (min-width: 1024px) {
+  div {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    width: 80%;  /* Centered with auto margins */
+  }
+  /* You can adjust images further if needed */
+  img {
+    width: 50%;
+    max-width: none;
+  }
+}
